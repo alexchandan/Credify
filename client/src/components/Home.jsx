@@ -1,14 +1,19 @@
-import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
+import {
+  CodeIcon,
+  BadgeIcon,
+  UsersIcon,
+  ClockIcon,
+  BellIcon,
+  SettingsIcon,
+  CheckIcon,
+  ShieldIcon,
+  MenuIcon,
+  CloseIcon,
+} from "../assets/Icons";
+import Features from "./Features";
 
 /* ─── DATA ───────────────────────────────────────────────── */
-const NAV_LINKS = [
-  "Home",
-  "Assessments",
-  "Performance",
-  "Candidates",
-  "Directory",
-];
-
 const STATS = [
   { value: "50,000+", label: "Verified Developers" },
   { value: "200+", label: "Partner Companies" },
@@ -27,47 +32,6 @@ const TRUSTED_COMPANIES = [
   "CLOUDCORE",
   "LOGICGATE",
   "SYNERGY",
-];
-
-const FEATURES = [
-  {
-    iconColor: "bg-blue-50 text-blue-600",
-    icon: <CodeIcon />,
-    title: "For Candidates: Verified Expertise",
-    description:
-      "Take industry-standard assessments in Frontend, Backend, and System Design. Earn digital badges that represent real-world coding ability.",
-    bullets: [
-      "Proctored coding environments",
-      "Skill-specific performance analytics",
-      "Immutable blockchain-backed badges",
-    ],
-    accent: "blue",
-  },
-  {
-    iconColor: "bg-white/10 text-white",
-    icon: <BadgeIcon />,
-    title: "Immutable Badges",
-    description:
-      "Your accomplishments, verified and portable. Shared easily on LinkedIn and resumes.",
-    dark: true,
-    accent: "emerald",
-  },
-  {
-    iconColor: "bg-violet-50 text-violet-600",
-    icon: <UsersIcon />,
-    title: "Talent Pool Discovery",
-    description:
-      "Recruiters access a curated directory of pre-vetted candidates, filtered by exact skill scores and performance metrics.",
-    accent: "violet",
-  },
-  {
-    iconColor: "bg-emerald-50 text-emerald-600",
-    icon: <ClockIcon />,
-    title: "Cut Hiring Time by 60%",
-    description:
-      "Eliminate early-stage technical rounds. Skip straight to final interviews with confidence in candidate quality.",
-    accent: "emerald",
-  },
 ];
 
 const MODULES = [
@@ -117,172 +81,6 @@ const MODULES = [
     ],
   },
 ];
-
-/* ─── ICONS ──────────────────────────────────────────────── */
-function CodeIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-    </svg>
-  );
-}
-function BadgeIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="8" r="4" />
-      <path d="M20 21a8 8 0 1 0-16 0" />
-    </svg>
-  );
-}
-function UsersIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    </svg>
-  );
-}
-function ClockIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <polyline points="12 6 12 12 16 14" />
-    </svg>
-  );
-}
-function BellIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-    </svg>
-  );
-}
-function SettingsIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <circle cx="12" cy="12" r="3" />
-      <path d="M19.07 4.93A10 10 0 1 0 4.93 19.07" />
-    </svg>
-  );
-}
-function CheckIcon() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
-}
-function ShieldIcon() {
-  return (
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#10b981"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      <polyline points="9 12 11 14 15 10" />
-    </svg>
-  );
-}
-function MenuIcon() {
-  return (
-    <svg
-      width="22"
-      height="22"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <line x1="3" y1="6" x2="21" y2="6" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <line x1="3" y1="18" x2="21" y2="18" />
-    </svg>
-  );
-}
-function CloseIcon() {
-  return (
-    <svg
-      width="22"
-      height="22"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <line x1="18" y1="6" x2="6" y2="18" />
-      <line x1="6" y1="6" x2="18" y2="18" />
-    </svg>
-  );
-}
 
 /* ─── HERO CARD VISUAL ────────────────────────────────────── */
 function HeroMockup() {
@@ -429,16 +227,6 @@ function HeroMockup() {
 
 /* ─── MAIN COMPONENT ─────────────────────────────────────── */
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState("Assessments");
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <div className="min-h-screen bg-white text-gray-900 antialiased overflow-x-hidden">
       <style>{`
@@ -513,66 +301,7 @@ export default function Home() {
       `}</style>
 
       {/* ── NAVBAR ── */}
-      <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md nav-shadow" : "bg-white/80 backdrop-blur-sm border-b border-gray-100/80"}`}
-      >
-        <div className="max-w-6xl mx-auto px-5 h-14.5 flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <span className="logo text-[17px] text-gray-900 select-none">
-              Skill<span className="text-blue-600">Verify</span>
-            </span>
-            <nav className="hidden md:flex items-center gap-1">
-              {NAV_LINKS.map((link) => (
-                <button
-                  key={link}
-                  onClick={() => setActiveNav(link)}
-                  className={`nav-link text-sm font-medium px-3 py-1.5 rounded-lg transition-colors ${activeNav === link ? "active text-blue-600 bg-blue-50/60" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"}`}
-                >
-                  {link}
-                </button>
-              ))}
-            </nav>
-          </div>
-          <div className="flex items-center gap-1">
-            <button className="p-2 text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-all">
-              <BellIcon />
-            </button>
-            <button className="p-2 text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-all">
-              <SettingsIcon />
-            </button>
-            <button className="btn ml-2 bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-gray-700 hidden md:block">
-              Sign Out
-            </button>
-            <button
-              className="md:hidden p-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-all"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className="mobile-menu md:hidden border-t border-gray-100 bg-white px-5 pb-4">
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link}
-                onClick={() => {
-                  setActiveNav(link);
-                  setMobileMenuOpen(false);
-                }}
-                className="block w-full text-left py-3 text-sm font-medium text-gray-600 border-b border-gray-50 last:border-0"
-              >
-                {link}
-              </button>
-            ))}
-            <button className="btn mt-3 w-full bg-gray-900 text-white text-sm font-semibold py-2.5 rounded-xl">
-              Sign Out
-            </button>
-          </div>
-        )}
-      </header>
+      <Navbar />
 
       {/* ── HERO ── */}
       <section className="hero-bg pt-16 pb-20 px-5 md:px-6 overflow-hidden">
@@ -667,191 +396,7 @@ export default function Home() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="py-24 px-5 md:px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <p className="tag-pill text-blue-500 mb-3">PLATFORM FEATURES</p>
-            <h2 className="font-display text-[34px] font-extrabold text-gray-900 tracking-tight leading-tight max-w-sm">
-              Precision-Engineered for Modern Teams
-            </h2>
-            <p className="text-gray-500 text-sm mt-3 max-w-md leading-relaxed">
-              A unified platform for candidates to showcase true competence and
-              for recruiters to build high-performing engineering organizations.
-            </p>
-          </div>
-
-          {/* Row 1 */}
-          <div className="grid md:grid-cols-2 gap-4 mb-4">
-            {/* Candidate card */}
-            <div className="card bg-white border border-gray-100 rounded-3xl p-8 shadow-sm relative overflow-hidden group">
-              {/* Decorative corner element */}
-              <div className="absolute -right-8 -top-8 w-32 h-32 bg-blue-50 rounded-full opacity-60 group-hover:scale-150 transition-transform duration-500" />
-              <div className="relative z-10">
-                <div className="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 shadow-sm">
-                  <CodeIcon />
-                </div>
-                <h3 className="font-display text-xl font-bold text-gray-900 mb-2">
-                  {FEATURES[0].title}
-                </h3>
-                <p className="text-gray-500 text-sm mb-5 leading-relaxed">
-                  {FEATURES[0].description}
-                </p>
-                <ul className="space-y-2.5">
-                  {FEATURES[0].bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex items-center gap-2.5 text-sm text-gray-700"
-                    >
-                      <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                        <CheckIcon />
-                      </span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* Fake code editor decoration */}
-              <div className="absolute right-4 bottom-4 bg-gray-900 rounded-xl p-3 w-28 opacity-40 group-hover:opacity-70 transition-opacity">
-                <div className="flex gap-1 mb-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                </div>
-                <div className="space-y-1">
-                  <div className="h-1 bg-blue-400 rounded w-3/4" />
-                  <div className="h-1 bg-gray-600 rounded w-1/2" />
-                  <div className="h-1 bg-emerald-400 rounded w-2/3" />
-                  <div className="h-1 bg-gray-600 rounded w-1/3" />
-                  <div className="h-1 bg-violet-400 rounded w-1/2" />
-                </div>
-              </div>
-            </div>
-
-            {/* Dark badge card */}
-            <div className="card bg-gray-900 rounded-3xl p-8 text-white relative overflow-hidden group">
-              {/* Animated orbs */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-colors duration-700" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-colors duration-700" />
-
-              <div className="relative z-10 h-full flex flex-col">
-                <div className="w-11 h-11 rounded-2xl bg-white/10 text-white flex items-center justify-center mb-5">
-                  <BadgeIcon />
-                </div>
-                <h3 className="font-display text-xl font-bold mb-2">
-                  {FEATURES[1].title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                  {FEATURES[1].description}
-                </p>
-
-                {/* Badge display */}
-                <div className="flex justify-center mt-auto">
-                  <div className="badge-glow w-20 h-20 bg-emerald-500/15 border border-emerald-400/30 rounded-3xl flex items-center justify-center">
-                    <ShieldIcon />
-                  </div>
-                </div>
-                <p className="text-center text-xs text-emerald-400 mt-3 font-medium">
-                  Blockchain-backed · Tamper-proof
-                </p>
-              </div>
-
-              {/* Dot grid */}
-              <div className="absolute top-5 right-5 grid grid-cols-4 gap-1.5 opacity-15">
-                {Array(16)
-                  .fill(0)
-                  .map((_, i) => (
-                    <div key={i} className="w-1 h-1 bg-white rounded-full" />
-                  ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="card bg-white border border-gray-100 rounded-3xl p-8 shadow-sm relative overflow-hidden group">
-              <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-violet-50 rounded-full opacity-60 group-hover:scale-150 transition-transform duration-500" />
-              <div className="relative z-10">
-                <div className="w-11 h-11 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center mb-5 shadow-sm">
-                  <UsersIcon />
-                </div>
-                <h3 className="font-display text-xl font-bold text-gray-900 mb-2">
-                  {FEATURES[2].title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {FEATURES[2].description}
-                </p>
-                {/* Mini candidate list */}
-                <div className="mt-5 space-y-2">
-                  {[
-                    ["Sara K.", "React · Node.js", "98"],
-                    ["James T.", "Python · ML", "94"],
-                    ["Mia R.", "Golang · Infra", "91"],
-                  ].map(([name, stack, score]) => (
-                    <div
-                      key={name}
-                      className="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2"
-                    >
-                      <div className="w-7 h-7 rounded-full bg-violet-200 flex items-center justify-center text-violet-700 text-xs font-bold">
-                        {name[0]}
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-xs font-semibold text-gray-800 leading-none">
-                          {name}
-                        </p>
-                        <p className="text-gray-400 text-xs mt-0.5">{stack}</p>
-                      </div>
-                      <span className="text-xs font-bold text-emerald-600">
-                        {score}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="card bg-white border border-gray-100 rounded-3xl p-8 shadow-sm relative overflow-hidden group">
-              <div className="absolute -left-6 -bottom-6 w-28 h-28 bg-emerald-50 rounded-full opacity-60 group-hover:scale-150 transition-transform duration-500" />
-              <div className="relative z-10">
-                <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 shadow-sm">
-                  <ClockIcon />
-                </div>
-                <h3 className="font-display text-xl font-bold text-gray-900 mb-2">
-                  {FEATURES[3].title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {FEATURES[3].description}
-                </p>
-                {/* Hiring funnel mini chart */}
-                <div className="mt-5 space-y-2.5">
-                  {[
-                    ["Applications", "100%", "bg-gray-200"],
-                    ["Technical Screen", "40%", "bg-blue-300"],
-                    ["Final Interview", "15%", "bg-emerald-400"],
-                  ].map(([label, pct, color]) => (
-                    <div key={label}>
-                      <div className="flex justify-between text-xs text-gray-500 mb-1">
-                        <span>{label}</span>
-                        <span className="font-semibold text-gray-700">
-                          {pct}
-                        </span>
-                      </div>
-                      <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                        <div
-                          className={`h-full rounded-full ${color}`}
-                          style={{ width: pct }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-xs text-emerald-600 font-semibold mt-4">
-                  ↓ Skip straight to final interviews
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Features />
 
       {/* ── MODULES ── */}
       <section
