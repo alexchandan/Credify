@@ -23,7 +23,7 @@ export default function Navbar() {
   });
 
   //testing area start here
-  console.log("mobile menu", mobileMenuOpen);
+
   // testing area ends here
 
   return (
@@ -33,8 +33,8 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-5 h-14.5 flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <span className="logo text-[17px] text-gray-900 select-none">
-              Skill<span className="text-blue-600">Verify</span>
+            <span className="logo text-[17px] text-blue-900 select-none">
+              Credify
             </span>
             <nav className="hidden md:flex items-center gap-1">
               {NAV_LINKS.map((link) => (

@@ -319,7 +319,7 @@ export default function Home() {
               Land Your Dream Job.
             </h1>
             <p className="fade-up fade-up-3 text-gray-500 text-[15px] leading-relaxed mb-8 max-w-[400px]">
-              SkillVerify bridges the gap between high-stakes recruitment and
+              Credify bridges the gap between high-stakes recruitment and
               technical proficiency with data-driven assessments designed for
               accuracy.
             </p>
@@ -557,11 +557,9 @@ export default function Home() {
       <footer className="border-t border-gray-100 bg-white">
         <div className="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
           <div>
-            <span className="logo text-base text-gray-900">
-              Skill<span className="text-blue-600">Verify</span>
-            </span>
+            <span className="logo text-base text-gray-900">Credify</span>
             <p className="text-gray-400 text-xs mt-1">
-              © 2024 SkillVerify Inc. Corporate Modernism Standards.
+              © 2026 Credify@alexchandan
             </p>
           </div>
           <div className="flex items-center gap-6 flex-wrap">
