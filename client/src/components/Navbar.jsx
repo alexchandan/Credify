@@ -4,11 +4,11 @@ import { BellIcon, SettingsIcon, CloseIcon, MenuIcon } from "../assets/Icons";
 
 // _____________Data______________
 const NAV_LINKS = [
-  "Home",
-  "Assessments",
-  "Performance",
-  "Candidates",
-  "Directory",
+  { name: "Home", path: "/" },
+  { name: "Assessments", path: "/assessments" },
+  { name: "Performance", path: "/performance" },
+  { name: "Candidates", path: "/candidates" },
+  { name: "Directory", path: "/directory" },
 ];
 
 export default function Navbar() {
@@ -23,7 +23,7 @@ export default function Navbar() {
   });
 
   //testing area start here
-
+  console.log("mobile menu", mobileMenuOpen);
   // testing area ends here
 
   return (
@@ -38,14 +38,14 @@ export default function Navbar() {
             </span>
             <nav className="hidden md:flex items-center gap-1">
               {NAV_LINKS.map((link) => (
-                <Link key={link} to={`/${link.toLowerCase()}`}>
+                <NavLink key={link.name} to={`${link.path}`}>
                   <button
-                    onClick={() => setActiveNav(link)}
-                    className={`nav-link text-sm font-medium px-3 py-1.5 rounded-lg transition-colors hover:cursor-pointer ${activeNav === link ? "active text-blue-600 bg-blue-50/60" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"}`}
+                    onClick={() => setActiveNav(link.name)}
+                    className={`nav-link text-sm font-medium px-3 py-1.5 rounded-lg transition-colors hover:cursor-pointer ${activeNav === link.name ? "active text-blue-600 bg-blue-50/60" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"}`}
                   >
-                    {link}
+                    {link.name}
                   </button>
-                </Link>
+                </NavLink>
               ))}
             </nav>
           </div>
@@ -72,18 +72,18 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="mobile-menu md:hidden border-t border-gray-100 bg-white px-5 pb-4">
             {NAV_LINKS.map((link) => (
-              <Link to={`/${link}`}>
+              <NavLink key={link.name} to={`${link.path}`}>
                 <button
-                  key={link}
+                  key={link.name}
                   onClick={() => {
-                    setActiveNav(link);
+                    setActiveNav(link.name);
                     setMobileMenuOpen(false);
                   }}
                   className="block w-full text-left py-3 text-sm font-medium text-gray-600 border-b border-gray-50 last:border-0"
                 >
-                  {link}
+                  {link.name}
                 </button>
-              </Link>
+              </NavLink>
             ))}
             <button className="btn mt-3 w-full bg-gray-900 text-white text-sm font-semibold py-2.5 rounded-xl">
               Sign In
