@@ -56,9 +56,11 @@ export default function Navbar() {
             <button className="p-2 text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-all">
               <SettingsIcon />
             </button>
-            <button className="btn ml-2 bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-gray-700 hidden md:block">
-              Sign In
-            </button>
+            <NavLink to={"/sign-in"}>
+              <button className="btn ml-2 bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-gray-700 hidden md:block">
+                Sign In
+              </button>
+            </NavLink>
             <button
               className="md:hidden p-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-all"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

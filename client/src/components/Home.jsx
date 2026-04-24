@@ -13,6 +13,7 @@ import {
 } from "../assets/Icons";
 import Features from "./Features";
 import Modules from "./Modules";
+import Footer from "./Footer";
 
 /* ─── DATA ───────────────────────────────────────────────── */
 const STATS = [
@@ -182,77 +183,6 @@ function HeroMockup() {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900 antialiased overflow-x-hidden">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
-        * { font-family: 'DM Sans', sans-serif; }
-        .font-display { font-family: 'Syne', sans-serif; }
-
-        /* Scrolled nav */
-        .nav-shadow { box-shadow: 0 1px 30px rgba(0,0,0,0.07); }
-
-        /* Hero gradient */
-        .hero-bg {
-          background: radial-gradient(ellipse 80% 60% at 60% 40%, #dbeafe 0%, #ede9fe 40%, #f0fdf4 70%, #f8fafc 100%);
-        }
-
-        /* Marquee */
-        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .marquee-track { animation: marquee 22s linear infinite; display: flex; width: max-content; }
-        .marquee-track:hover { animation-play-state: paused; }
-
-        /* Float cards */
-        @keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-        @keyframes floatB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
-        .float-card { animation: floatA 4s ease-in-out infinite; }
-        .float-card-delay { animation: floatB 4.5s ease-in-out 1s infinite; }
-
-        /* Card hover */
-        .card { transition: transform 0.28s cubic-bezier(.34,1.56,.64,1), box-shadow 0.28s ease; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.10); }
-
-        /* Module card hover */
-        .module-card { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease; }
-        .module-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
-
-        /* Button */
-        .btn { transition: all 0.2s ease; }
-        .btn:hover { transform: translateY(-1px); }
-        .btn:active { transform: translateY(0); }
-
-        /* Nav link */
-        .nav-link { position: relative; padding-bottom: 3px; }
-        .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:#2563eb; border-radius:2px; transition: width 0.2s ease; }
-        .nav-link.active::after, .nav-link:hover::after { width:100%; }
-
-        /* Fade-in-up */
-        @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-        .fade-up { animation: fadeUp 0.6s ease forwards; }
-        .fade-up-1 { animation-delay: 0.1s; opacity:0; }
-        .fade-up-2 { animation-delay: 0.22s; opacity:0; }
-        .fade-up-3 { animation-delay: 0.34s; opacity:0; }
-        .fade-up-4 { animation-delay: 0.46s; opacity:0; }
-
-        /* Badge glow */
-        .badge-glow { box-shadow: 0 0 40px rgba(16,185,129,0.3), 0 0 80px rgba(16,185,129,0.1); }
-
-        /* Mobile menu */
-        @keyframes slideDown { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
-        .mobile-menu { animation: slideDown 0.2s ease forwards; }
-
-        /* Logo */
-        .logo { font-family:'Syne',sans-serif; font-weight:800; letter-spacing:-0.03em; }
-
-        /* Tag pill */
-        .tag-pill { font-family:'Syne',sans-serif; font-weight:700; letter-spacing:0.1em; font-size:10px; }
-
-        /* Stat card */
-        .stat-card { transition: transform 0.2s ease; }
-        .stat-card:hover { transform: translateY(-2px); }
-
-        /* Scrollbar hide for marquee */
-        .marquee-wrap { overflow: hidden; }
-      `}</style>
-
       {/* ── NAVBAR ── */}
       <Navbar />
 
@@ -265,10 +195,10 @@ export default function Home() {
               <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
               THE STANDARD FOR TECHNICAL VERIFICATION
             </div>
-            <h1 className="font-display fade-up fade-up-2 text-[52px] leading-[1.08] font-extrabold text-gray-900 tracking-tight mb-2">
+            <h1 className="font-slogan font-extrabold fade-up fade-up-2 text-[52px] leading-[1.08] text-gray-900 tracking-tight mb-2">
               Verify Your Skills.
             </h1>
-            <h1 className="font-display fade-up fade-up-2 text-[52px] leading-[1.08] font-extrabold text-blue-600 tracking-tight mb-6">
+            <h1 className="font-slogan font-extrabold fade-up fade-up-2 text-[52px] leading-[1.08] text-blue-600 tracking-tight mb-6">
               Land Your Dream Job.
             </h1>
             <p className="fade-up fade-up-3 text-gray-500 text-[15px] leading-relaxed mb-8 max-w-[400px]">
@@ -415,29 +345,7 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-gray-100 bg-white">
-        <div className="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-          <div>
-            <span className="logo text-base text-gray-900">Credify</span>
-            <p className="text-gray-400 text-xs mt-1">
-              © 2026 Credify@alexchandan
-            </p>
-          </div>
-          <div className="flex items-center gap-6 flex-wrap">
-            {["Privacy Policy", "Terms of Service", "Security", "Status"].map(
-              (link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="text-gray-400 hover:text-gray-700 text-xs transition-colors"
-                >
-                  {link}
-                </a>
-              ),
-            )}
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
