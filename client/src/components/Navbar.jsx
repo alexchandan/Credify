@@ -5,10 +5,10 @@ import { BellIcon, SettingsIcon, CloseIcon, MenuIcon } from "../assets/Icons";
 // _____________Data______________
 const NAV_LINKS = [
   { name: "Home", path: "/" },
-  { name: "Assessments", path: "/assessments" },
-  { name: "Performance", path: "/performance" },
-  { name: "Candidates", path: "/candidates" },
-  { name: "Directory", path: "/directory" },
+  { name: "Assessments", path: "/#" },
+  { name: "Performance", path: "/#" },
+  { name: "Candidates", path: "/#" },
+  { name: "Directory", path: "/#" },
 ];
 
 export default function Navbar() {
