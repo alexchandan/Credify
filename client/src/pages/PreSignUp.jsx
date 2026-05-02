@@ -7,6 +7,8 @@ import {
   ArrowIcon,
   RecruiterIcon,
 } from "../assets/Icons";
+import Footer from "../components/Footer";
+import { NavLink } from "react-router-dom";
 
 const JourneyCard = ({ icon, iconBg, title, description, ctaLabel }) => (
   <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-8 flex flex-col cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
@@ -73,20 +75,24 @@ export default function ChooseJourney() {
 
         {/* Cards */}
         <div className="flex flex-col md:flex-row gap-6 w-full max-w-3xl mb-10">
-          <JourneyCard
-            icon={<SearchIcon />}
-            iconBg="bg-indigo-100"
-            title="I am a Candidate"
-            description="Build your professional profile, verify your technical skills through our assessments, and get discovered by top companies."
-            ctaLabel="Get Started"
-          />
-          <JourneyCard
-            icon={<RecruiterIcon />}
-            iconBg="bg-slate-200"
-            title="I am a Recruiter"
-            description="Post assessments, evaluate candidates with data-driven insights, and streamline your technical hiring process."
-            ctaLabel="Hire Talent"
-          />
+          <NavLink to={"/condidate-signup"}>
+            <JourneyCard
+              icon={<SearchIcon />}
+              iconBg="bg-indigo-100"
+              title="I am a Candidate"
+              description="Build your professional profile, verify your technical skills through our assessments, and get discovered by top companies."
+              ctaLabel="Get Started"
+            />
+          </NavLink>
+          <NavLink to={"/recruiter-signup"}>
+            <JourneyCard
+              icon={<RecruiterIcon />}
+              iconBg="bg-slate-200"
+              title="I am a Recruiter"
+              description="Post assessments, evaluate candidates with data-driven insights, and streamline your technical hiring process."
+              ctaLabel="Hire Talent"
+            />
+          </NavLink>
         </div>
 
         {/* Trust Bar */}
@@ -115,22 +121,7 @@ export default function ChooseJourney() {
       </main>
 
       {/* Footer */}
-      <footer className="px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-400">
-        <span>© 2024 TalentScale Systems. All rights reserved.</span>
-        <div className="flex items-center gap-6">
-          {["Privacy Policy", "Terms of Service", "Security", "Status"].map(
-            (link) => (
-              <a
-                key={link}
-                href="#"
-                className="hover:text-gray-600 transition-colors underline underline-offset-2"
-              >
-                {link}
-              </a>
-            ),
-          )}
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,8 @@ import Auth from "./components/Auth";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import PreSignUp from "./pages/PreSignUp";
+import CondidateSignUp from "./pages/CondidateSignUp";
+import RecruiterSignup from "./pages/RecruiterSignup";
 function App() {
   return (
     <>
@@ -12,6 +14,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Sign-in" element={<Login />} />
           <Route path="/pre-sign-up" element={<PreSignUp />} />
+          <Route path="/condidate-signup" element={<CondidateSignUp />} />
+          <Route path="/recruiter-signup" element={<RecruiterSignup />} />
         </Routes>
       </BrowserRouter>
     </>
