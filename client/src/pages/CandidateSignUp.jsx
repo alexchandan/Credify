@@ -1331,7 +1331,7 @@ const S = {
 /* ════════════════════════════════════════════════════════════
    ROOT
 ════════════════════════════════════════════════════════════ */
-export default function CondidateSignup() {
+export default function CandidateSignup() {
   const [step, setStep] = useState(1);
   const [personal, setP] = useState({
     name: "",

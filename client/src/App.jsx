@@ -1,24 +1,39 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import Auth from "./components/Auth";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import PreSignUp from "./pages/PreSignUp";
-import CondidateSignUp from "./pages/CondidateSignUp";
+import CandidateSignUp from "./pages/CandidateSignUp";
 import RecruiterSignup from "./pages/RecruiterSignup";
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/sign-in",
+      element: <Login />,
+    },
+    {
+      path: "/pre-sign-up",
+      element: <PreSignUp />,
+    },
+    {
+      path: "/candidate-signup",
+      element: <CandidateSignUp />,
+    },
+    {
+      path: "/recruiter-signup",
+      element: <RecruiterSignup />,
+    },
+  ]);
+
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Sign-in" element={<Login />} />
-          <Route path="/pre-sign-up" element={<PreSignUp />} />
-          <Route path="/condidate-signup" element={<CondidateSignUp />} />
-          <Route path="/recruiter-signup" element={<RecruiterSignup />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
