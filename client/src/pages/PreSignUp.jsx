@@ -75,7 +75,7 @@ export default function ChooseJourney() {
 
         {/* Cards */}
         <div className="flex flex-col md:flex-row gap-6 w-full max-w-3xl mb-10">
-          <NavLink to={"/condidate-signup"}>
+          <NavLink to={"/candidate-signup"}>
             <JourneyCard
               icon={<SearchIcon />}
               iconBg="bg-indigo-100"
