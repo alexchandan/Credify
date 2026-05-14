@@ -1,8 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./components/Home";
-import Auth from "./components/Auth";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Navbar from "./components/Navbar";
 import PreSignUp from "./pages/PreSignUp";
 import CandidateSignUp from "./pages/CandidateSignUp";
 import RecruiterSignup from "./pages/RecruiterSignup";

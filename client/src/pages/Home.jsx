@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import {
   CodeIcon,
   BadgeIcon,
@@ -11,9 +11,9 @@ import {
   MenuIcon,
   CloseIcon,
 } from "../assets/Icons";
-import Features from "./Features";
-import Modules from "./Modules";
-import Footer from "./Footer";
+import Features from "../components/Features";
+import Modules from "../components/Modules";
+import Footer from "../components/Footer";
 
 /* ─── DATA ───────────────────────────────────────────────── */
 const STATS = [

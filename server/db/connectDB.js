@@ -2,10 +2,16 @@ import mongoose from "mongoose";
 
 const connectDB = async (DB_URI) => {
   try {
+    if (!DB_URI) {
+      throw new Error("MongoDB URI is missing");
+    }
+
     await mongoose.connect(DB_URI);
-    console.log("Database Connected Successfully.");
+
+    console.log("MongoDB Connected Successfully");
   } catch (error) {
-    console.log("DB connection error: ", error);
+    console.error("DB Connection Error:", error.message);
+
     process.exit(1);
   }
 };
