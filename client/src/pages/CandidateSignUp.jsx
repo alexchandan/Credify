@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 /* ════════════════════════════════════════════════════════════
    ICONS
@@ -1489,40 +1490,7 @@ export default function CandidateSignup() {
       </main>
 
       {/* ── FOOTER ── */}
-      <footer
-        style={{
-          borderTop: "1px solid #e9eaec",
-          background: "#fff",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: 10,
-          padding: "14px 28px",
-          fontSize: 12,
-          color: "#9ca3af",
-        }}
-      >
-        <span>© 2024 Credify Inc. All rights reserved.</span>
-        <div style={{ display: "flex", gap: 22 }}>
-          {[
-            "Privacy Policy",
-            "Terms of Service",
-            "Security",
-            "Cookie Settings",
-          ].map((l) => (
-            <a
-              key={l}
-              href="#"
-              style={{ color: "#9ca3af", textDecoration: "none" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#374151")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#9ca3af")}
-            >
-              {l}
-            </a>
-          ))}
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

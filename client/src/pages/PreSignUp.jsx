@@ -9,9 +9,10 @@ import {
 } from "../assets/Icons";
 import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
+import SharedNav from "../components/SharedNav";
 
 const JourneyCard = ({ icon, iconBg, title, description, ctaLabel }) => (
-  <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-8 flex flex-col cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+  <div className="flex-1 glass-bg border border-gray-200 rounded-2xl p-8 flex flex-col cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
     <div
       className={`w-12 h-12 rounded-xl ${iconBg} flex items-center justify-center mb-6`}
     >
@@ -46,35 +47,22 @@ const TrustItem = ({ icon, iconBg, title, subtitle }) => (
 
 export default function ChooseJourney() {
   return (
-    <div
-      className="min-h-screen flex flex-col bg-[#f0f4fb]"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
-    >
+    <div className="min-h-screen flex flex-col page-light-bg font-['DM Sans, sans-serif']">
       {/* Navbar */}
-      <nav className="bg-white border-b border-gray-100 px-8 py-4 flex items-center justify-between">
-        <span className=" logo text-xl font-bold tracking-tight text-gray-900">
-          Credify
-        </span>
-        <button className="text-sm text-gray-500 hover:text-gray-800 font-medium transition-colors">
-          Support
-        </button>
-      </nav>
+      <SharedNav />
 
       {/* Main */}
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-16">
-        <h1
-          className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4"
-          style={{ fontFamily: "'DM Serif Display', serif" }}
-        >
+      <main className="flex-1 flex flex-col items-center justify-center px-4 py-16 fade-in delay-1">
+        <h1 className="text-4xl md:text-5xl text-gray-900 text-center mb-4 font-['Syne', sans-serif] font-extrabold">
           Choose your journey
         </h1>
         <p className="text-gray-500 text-center max-w-md mb-12 text-base leading-relaxed">
-          Welcome to TalentScale. Tell us how you plan to use the platform
-          <br className="hidden md:block" /> so we can tailor your experience.
+          Welcome to TalentScale. Tell us how you plan to use the platform so we
+          can tailor your experience.
         </p>
 
         {/* Cards */}
-        <div className="flex flex-col md:flex-row gap-6 w-full max-w-3xl mb-10">
+        <div className="flex flex-col md:flex-row gap-6 w-full max-w-3xl mb-10 fade-in delay-2">
           <NavLink to={"/candidate-signup"}>
             <JourneyCard
               icon={<SearchIcon />}
@@ -96,7 +84,7 @@ export default function ChooseJourney() {
         </div>
 
         {/* Trust Bar */}
-        <div className="w-full max-w-3xl bg-white border border-gray-200 rounded-2xl px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="w-full max-w-3xl glass-bg border border-gray-200 rounded-2xl px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 fade-in delay-3">
           <TrustItem
             icon={<StarIcon />}
             iconBg="bg-amber-50"

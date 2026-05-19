@@ -772,7 +772,10 @@ export default function RecruiterSignup() {
   return (
     <div
       className="min-h-screen flex flex-col bg-gray-50"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      style={{
+        fontFamily: "'Inter', 'DM Sans', system-ui, sans-serif",
+        // fontFamily: "'DM Sans', sans-serif"
+      }}
     >
       <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');`}</style>
 

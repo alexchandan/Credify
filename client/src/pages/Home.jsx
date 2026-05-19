@@ -187,7 +187,7 @@ export default function Home() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="hero-bg pt-16 pb-20 px-5 md:px-6 overflow-hidden">
+      <section className="page-light-bg pt-16 pb-20 px-5 md:px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-8">
           {/* Left */}
           <div className="flex-1 max-w-lg">

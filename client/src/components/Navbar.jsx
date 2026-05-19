@@ -20,7 +20,7 @@ export default function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  });
+  }, []);
 
   //testing area start here
 
@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <div>
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md nav-shadow" : "bg-white/80 backdrop-blur-sm border-b border-gray-100/80"}`}
+        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md nav-shadow" : "hero-bg backdrop-blur-sm border-b border-gray-100/80"}`}
       >
         <div className="max-w-6xl mx-auto px-5 h-14.5 flex items-center justify-between">
           <div className="flex items-center gap-8">
@@ -87,9 +87,11 @@ export default function Navbar() {
                 </button>
               </NavLink>
             ))}
-            <button className="btn mt-3 w-full bg-gray-900 text-white text-sm font-semibold py-2.5 rounded-xl">
-              Sign In
-            </button>
+            <NavLink to={"/sign-in"}>
+              <button className="btn mt-3 w-full bg-gray-900 text-white text-sm font-semibold py-2.5 rounded-xl">
+                Sign In
+              </button>
+            </NavLink>
           </div>
         )}
       </header>
