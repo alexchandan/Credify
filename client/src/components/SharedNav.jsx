@@ -3,7 +3,7 @@ import { GlobeIcon } from "../assets/Icons";
 function SharedNav() {
   return (
     <div>
-      <header className="hero-bg flex items-center justify-between  border-b border-b-[#e9eaec] px-7 h-14 shrink-0 ">
+      <header className="hero-bg flex items-center justify-between  border-b border-b-[#dcdee1] px-7 h-14 shrink-0 ">
         <span className="logo font-extrabold text-[17px] text-[#111827] tracking-[-0.025em] ">
           Credify
         </span>

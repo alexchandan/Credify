@@ -2,9 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PreSignUp from "./pages/PreSignUp";
-import CandidateSignUp from "./pages/CandidateSignUp";
+import CandidateSignup from "./pages/CandidateSignup";
 import RecruiterSignup from "./pages/RecruiterSignup";
-// import { SkeletonBadgeCard } from "./components/SkeltonBadgeCard";
 function App() {
   const router = createBrowserRouter([
     {
@@ -21,7 +20,7 @@ function App() {
     },
     {
       path: "/candidate-signup",
-      element: <CandidateSignUp />,
+      element: <CandidateSignup />,
     },
     {
       path: "/recruiter-signup",
